@@ -9,31 +9,12 @@ const stats = [
     { label: "Interest", value: "Quality" },
 ];
 
-const navLinks = ["Home", "Experience", "Contact"];
 
 export default function homePage() {
-    const [active, setActive] = useState("Home");
+
 
     return (
         <div className="min-h-screen bg-white/96 font-sans text-gray-900 flex flex-col">
-            {/* Navbar */}
-            <header className="flex items-center justify-center py-5">
-                <nav className="flex gap-1 bg-gray-100 rounded-full px-2 py-1.5 shadow-sm">
-                    {navLinks.map((link) => (
-                        <button
-                            key={link}
-                            onClick={() => setActive(link)}
-                            className={`px-5 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${active === link
-                                ? "bg-white text-gray-900 shadow"
-                                : "text-gray-500 hover:text-gray-800"
-                                }`}
-                        >
-                            {link}
-                        </button>
-                    ))}
-                </nav>
-            </header>
-
             {/* Main content */}
             <main className="flex-1 flex items-center justify-center px-6 py-8">
                 <div className="w-full max-w-5xl flex flex-col lg:flex-row gap-8 items-stretch">
@@ -144,21 +125,7 @@ export default function homePage() {
                 </div>
             </main>
 
-            {/* Footer */}
-            <footer className="py-5 px-8 flex items-center justify-between text-xs text-gray-400 border-t border-gray-100">
-                <nav className="flex gap-5">
-                    {navLinks.map((link) => (
-                        <button
-                            key={link}
-                            onClick={() => setActive(link)}
-                            className="hover:text-gray-700 transition-colors"
-                        >
-                            {link}
-                        </button>
-                    ))}
-                </nav>
-                <span>© 2026 Muhammed Sahal K. All rights reserved.</span>
-            </footer>
+
         </div>
     );
 }
