@@ -8,8 +8,8 @@ export default function Header() {
     const [active, setActive] = useState("Home");
 
     return (
-        <header className="flex items-center justify-center py-5">
-            <nav className="flex gap-1 bg-gray-100 rounded-full px-2 py-1.5 shadow-sm">
+        <header className="fixed top-4 left-0 w-full flex justify-center z-50">
+            <nav className="flex gap-1 bg-gray-100/80 backdrop-blur-md rounded-full px-3 py-2 shadow-md border border-gray-200">
                 {navLinks.map((link) => (
                     <button
                         key={link}

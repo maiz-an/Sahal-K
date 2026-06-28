@@ -1,28 +1,45 @@
 "use client";
 
-import { useState } from "react";
-
-const navLinks = ["Home", "Experience", "Contact"];
+import { FaLinkedin, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
-    const [active, setActive] = useState("Home");
-
     return (
-        <footer className="py-5 px-8 flex items-center justify-between text-xs text-gray-400 border-t border-gray-100">
-            <nav className="flex gap-5">
-                {navLinks.map((link) => (
-                    <button
-                        key={link}
-                        onClick={() => setActive(link)}
-                        className={`transition-colors ${active === link ? "text-gray-700" : "hover:text-gray-700"
-                            }`}
-                    >
-                        {link}
-                    </button>
-                ))}
-            </nav>
+        <footer className="fixed bottom-0 w-full z-50">
+            <div className="flex items-center justify-between bg-gray-100/80 backdrop-blur-md px-6 py-3 shadow-md border border-gray-200">
 
-            <span>© 2026 Muhammed Sahal K. All rights reserved.</span>
+                {/* Social Icons */}
+                <div className="flex gap-4">
+
+                    <a
+                        href="https://linkedin.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        title="LinkedIn"
+                        className="text-gray-500 hover:text-blue-600 transition"
+                    >
+                        <FaLinkedin size={18} />
+                    </a>
+
+                    <a
+                        href="https://twitter.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Twitter"
+                        title="Twitter"
+                        className="text-gray-500 hover:text-sky-500 transition"
+                    >
+                        <FaTwitter size={18} />
+                    </a>
+
+                </div>
+
+                {/* Copyright */}
+                <span className="text-[10px] text-gray-400">
+                    © 2026 Muhammed Sahal K.
+                </span>
+
+            </div>
         </footer>
     );
 }
