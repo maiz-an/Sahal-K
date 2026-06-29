@@ -1,9 +1,8 @@
-"use client";
-import { FaRegEnvelope } from "react-icons/fa6";
+ "use client";
 import { FaPaperPlane } from "react-icons/fa6";
 const navLinks = [
   { label: "Home", key: "home" },
-  { label: "Doings", key: "experience" },
+  { label: "Experience", key: "experience" },
   { label: "Works", key: "works" },
   { label: "Contact", key: "contact" },
 ] as const;

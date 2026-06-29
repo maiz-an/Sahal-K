@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import Header from "../components/header";
@@ -339,9 +339,30 @@ function ContactPanel() {
 export default function HomePage() {
   const [active, setActive] = useState<ViewKey>("home");
 
+  useEffect(() => {
+    const syncFromHash = () => {
+      const hash = window.location.hash.replace("#", "") as ViewKey;
+      if (hash === "experience" || hash === "works" || hash === "contact") {
+        setActive(hash);
+      } else {
+        setActive("home");
+      }
+    };
+
+    syncFromHash();
+    window.addEventListener("hashchange", syncFromHash);
+    return () => window.removeEventListener("hashchange", syncFromHash);
+  }, []);
+
+  const handleChange = (value: ViewKey) => {
+    setActive(value);
+    const nextUrl = value === "home" ? "/" : `#${value}`;
+    window.history.pushState(null, "", nextUrl);
+  };
+
   return (
     <>
-      <Header active={active} onChange={setActive} />
+      <Header active={active} onChange={handleChange} />
 
       <div className="min-h-screen bg-white/96 font-sans text-gray-900 flex flex-col">
         <main className="flex-1 px-4 pb-28 pt-24 sm:px-6 sm:pb-32 sm:pt-28">
