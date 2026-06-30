@@ -11,7 +11,7 @@ const navLinks = [
   { label: "Contact", key: "contact" },
 ] as const;
 
-const hiddenState = { opacity: 0, y: 245, x: -60, scale: 0.6 };
+const hiddenState = { opacity: 0, y: 245, x: -54, scale: 0.6 };
 
 type HeaderProps = {
   active: (typeof navLinks)[number]["key"];
