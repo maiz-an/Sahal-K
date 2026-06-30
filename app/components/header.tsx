@@ -1,8 +1,8 @@
- "use client";
+"use client";
 import { FaPaperPlane } from "react-icons/fa6";
 const navLinks = [
   { label: "Home", key: "home" },
-  { label: "Experience", key: "experience" },
+  { label: "Doings", key: "experience" },
   { label: "Works", key: "works" },
   { label: "Contact", key: "contact" },
 ] as const;
